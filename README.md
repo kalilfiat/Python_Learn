@@ -20,7 +20,8 @@ Abre la URL que muestra la terminal (normalmente `http://localhost:8501`).
 El repositorio debe incluir al menos:
 
 ```
-app.py              ← archivo principal (entry point)
+app.py              ← lógica de la aplicación
+streamlit_app.py    ← entry point para Streamlit Cloud
 requirements.txt
 assets/theme.css
 .streamlit/config.toml
@@ -29,16 +30,17 @@ assets/theme.css
 Comprueba que todo esté commiteado:
 
 ```powershell
-git add app.py requirements.txt assets/ .streamlit/ README.md .gitignore .python-version
+git add app.py streamlit_app.py requirements.txt assets/ .streamlit/ README.md .gitignore .python-version
 git commit -m "Preparar deploy en Streamlit Cloud"
 git push origin main
 ```
 
-### 2. Crear la app en Streamlit Cloud
+### 2. Crear la app en Streamlit Community Cloud
 
 1. Entra en [share.streamlit.io](https://share.streamlit.io) e inicia sesión con GitHub.
 2. Pulsa **Create app**.
-3. Elige tu repositorio, rama `main` y archivo principal **`app.py`**.
+3. Elige tu repositorio, rama `main` y archivo principal **`streamlit_app.py`**.
+   - También puedes usar **`app.py`** si lo indicas manualmente en *Main file path*.
 4. En **Advanced settings** (opcional):
    - **Python version:** 3.11
 5. Pulsa **Deploy**.
